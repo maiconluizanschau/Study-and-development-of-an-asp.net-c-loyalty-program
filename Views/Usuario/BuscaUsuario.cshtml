@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "BuscaUsuario";
+    var items = ViewBag.usuarios;
+}
+
+
+<br />
+<br />
+<br />
+<br />
+<!--Example of mini table sizing using .table-sm class added to the .table-->
+<center>
+    <p>Confira os últimos lançamentos <code>referentes a sua</code>  <code>movimentação</code>.</p>
+</center>
+
+<table id="table-sm" class="table table-bordered table-hover table-sm">
+    <thead>
+        <tr>
+
+            <th>Id Empresa</th>
+
+
+            <th>Empresa</th>
+            <th>Pontos</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in items)
+        {
+        <tr>
+
+
+
+
+
+
+            <td class="color-blue-grey-lighter">@item.Nome  </td>
+            <td class="color-blue-grey-lighter">@item.Nome?.ToUpper()   </td>
+
+
+            <td scope="col"><a href='~/Usuario/Editar/@item.IdUsuario'>Editar </a></td>
+
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+<br>

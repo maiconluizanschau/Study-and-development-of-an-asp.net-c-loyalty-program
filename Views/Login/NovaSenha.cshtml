@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "NovaSenha";
+    Layout = "~/Views/Shared/_Recuperar.cshtml";
+}
+
+
+<div class="page-center">
+    <div class="page-center-in">
+        <div class="container-fluid">
+            <form method="post" action="~/Login/NovaSenha" class="sign-box">
+
+
+                <div class="sign-avatar">
+                    <img src="~/Scripts/imagens/avatar-sign.png" alt="">
+                </div>
+
+                <header class="sign-title">Recuperar Minha Senha!</header>
+                <div class="form-group">
+                    <input type="password" name="Senha" class="form-control" placeholder="Sua nova senha Pessoal" required/>
+                </div>
+                <button type="submit" class="btn btn-rounded">Salvar Senha Nova</button>
+               
+            </form>
+        </div>
+    </div>
+</div><!--.page-center-->

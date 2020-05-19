@@ -1,0 +1,51 @@
+﻿
+@{
+    var items = ViewBag.usuarios;
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Paginas.cshtml";
+}
+
+
+
+
+<section class="box-typical">
+    <header class="box-typical-header-sm bordered">Dados Pessoais</header>
+    <div class="box-typical-inner">
+        @foreach (var item in items)
+        {
+
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-pin-2"></i>
+                @item.Nome
+            </p>
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-users-two"></i>
+                @item.Sexo
+            </p>
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-case-3"></i>
+                @item.Cpf
+            </p>
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-learn"></i>
+                @item.DataNascimento
+            </p>
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-github"></i>
+                <a href="#">@item.Telefone </a>
+            </p>
+            <p class="line-with-icon">
+                <i class="font-icon font-icon-earth"></i>
+                <a href="#">@item.Email </a>
+            </p>
+
+
+            <center>
+                <td scope="col"><a href='~/Usuario/Editar/@item.IdUsuario'>Editar Perfil </a></td>
+            </center>
+
+
+        }
+    </div>
+
+</section>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Recuperar";
+    Layout = "~/Views/Shared/_Recuperar.cshtml";
+}
+
+
+
+<div class="page-center">
+    <div class="page-center-in">
+        <div class="container-fluid">
+            <form method="post" action="~/Login/RecuperaSenha" class="sign-box">
+
+
+                <div class="sign-avatar">
+                    <img src="~/Scripts/imagens/avatar-sign.png" alt="">
+                </div>
+
+                <header class="sign-title">Recuperar Minha Senha!</header>
+                <div class="form-group">
+                    <input type="text" name="Email" class="form-control" placeholder="E-Mail de recuperação da senha" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Cpf" class="form-control" placeholder="Seu CPF " required/>
+                </div>
+                <button type="submit" class="btn btn-rounded">Recuperar</button>
+                | <a href="#">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div><!--.page-center-->

@@ -1,0 +1,244 @@
+﻿@{
+    var items = ViewBag.IdUsuarioIdEmpresa;
+    ViewBag.Title = "BuscaEmpresaUsuario";
+    Layout = "~/Views/Shared/_Perfil.cshtml";
+
+}
+<div class="page-content">
+    <div class="profile-header-photo">
+        <div class="profile-header-photo-in">
+            <div class="tbl-cell">
+                <div class="info-block">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-9 col-xl-offset-3 col-lg-8 col-lg-offset-4 col-md-offset-0">
+                                <div class="tbl info-tbl">
+                                    <div class="tbl-row">
+                                        <div class="tbl-cell">
+                                            <p class="title">Dan Counsell</p>
+                                            <p>Company Founder</p>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">23К</p>
+                                                <p>Followers</p>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">938</p>
+                                                <p>Photos</p>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">18</p>
+                                                <p>Videos</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="change-cover">
+            <i class="font-icon font-icon-picture-double"></i>
+            Atualizar Foto de Capa
+            <input type="file" />
+        </button>
+    </div><!--.profile-header-photo-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <aside class="profile-side">
+                    <section class="box-typical profile-side-user">
+                        <button type="button" class="avatar-preview avatar-preview-128">
+                            <img src="~/Scripts/imagens/avatar-1-256.png" alt="" />
+                            <span class="update">
+                                <i class="font-icon font-icon-picture-double"></i>
+                                Update photo
+                            </span>
+                            <input type="file" />
+                        </button>
+                        <button type="button" class="btn btn-rounded">Editar Perfil</button>
+                        <div class="btn-group">
+
+
+                        </div>
+
+                    </section>
+
+                    <section class="box-typical profile-side-stat">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell">
+                                    <span class="number">9854</span>
+                                    Pontos
+                                </div>
+                                <div class="tbl-cell">
+                                    <span class="number">112</span>
+                                    Compras
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+                    <section class="box-typical">
+                        @Html.Action(
+                     "usuarios",
+                     "Usuario",
+                     null)
+                    </section>
+
+
+                </aside><!--.profile-side-->
+            </div>
+
+            <div class="col-xl-9 col-lg-8">
+                <section class="tabs-section">
+                    <div class="tabs-section-nav tabs-section-nav-left">
+                        <ul class="nav" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link inative" href="~/Perfil" role="tab">
+                                    <span class="nav-link-in">Saldos</span>
+                                </a>
+
+
+                            </li>
+
+                            <li class="nav-item">
+
+
+                                <a class="nav-link active" href="#tabs-2-tab-1" role="tab" data-toggle="tab">
+                                    <span class="nav-link-in">Movimentos</span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </div><!--.tabs-section-nav-->
+
+                    <div class="tab-content no-styled profile-tabs">
+                        <div role="tabpanel" class="tab-pane active" id="tabs-2-tab-1">
+
+
+                            <table id="table-edit" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th><center>Empresa</center></th>
+                                        <th><center>Data</center></th>
+                                        <th><center>Valor da Compra</center></th>
+                                        <th><center>Valor Crédito</center></th>
+                                        <th><center>Sobra de Pontos</center></th>
+                                        <th><center>Pontos</center></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in items)
+                                    {
+                                    <tr>
+                                        <td class="table-photo">
+                                            <center>
+                                                <img src="~/Scripts/imagens/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                            </center>
+                                        </td>
+
+
+                                        <td><center>@item.nome  </center></td>
+                                     
+                                        <td><center>@item.Data  </center></td>
+                                     
+                                        <td><center>@item.ValorCompra  </center></td>
+                                  
+                                        <td><center>@item.ValorCredito  </center></td>
+                                     
+                                        <td><center>@item.ValorSobra   </center></td>
+                                        
+                                        <td><center>@item.Pontos    </center></td>
+                                   
+                                    </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                        </div><!--.tab-pane-->
+
+
+
+                    </div><!--.tab-content-->
+                </section><!--.tabs-section-->
+            </div>
+
+
+
+
+
+
+        </div><!--.row-->
+    </div><!--.container-fluid-->
+</div><!--.page-content-->
+<!-- Footer -->
+
+<script src="~/Scripts/scripts/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/scripts/lib/popper/popper.min.js"></script>
+<script src="~/Scripts/scripts/lib/tether/tether.min.js"></script>
+<script src="~/Scripts/scripts/lib/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/scripts/plugins.js"></script>
+<script src="~/Scripts/scripts/lib/salvattore/salvattore.min.js"></script>
+<script src="~/Scripts/scripts/lib/ion-range-slider/ion.rangeSlider.js"></script>
+<script src="~/Scripts/scripts/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+<script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                padding: 0,
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+
+            $("#range-slider-1").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-2").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-3").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-4").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+        });
+</script>
+
+<script src="~/Scripts/scripts/app.js"></script>

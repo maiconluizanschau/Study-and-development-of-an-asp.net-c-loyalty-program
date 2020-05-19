@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "BuscaMovimento";
+    var items = ViewBag.movimentos;
+    Layout = "~/Views/Shared/_Paginas.cshtml";
+}
+
+
+<table id="table-edit" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th><center>Empresa</center></th>
+            <th><center>Pontos</center></th>
+            <th><center>Informações Detalhadas</center></th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in items)
+        {
+        <tr>
+            <td class="table-photo">
+                <img src="~/Scripts/imagens/Perfil/empresa.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Ristore programa de fidelidade">
+            </td>
+
+
+
+            <td><center>@item.enome </center></td>
+
+      
+            <td><center>@item.Pontos </center></td>
+         
+
+
+            <td>
+                <center>
+                    <div class="tbl-cell tbl-cell-action-bordered">
+                        <a href="@Url.Action("BuscaEmpresaUsuario", new { IdEmpresa=item.Idempresa })" class="action-btn"><i class="font-icon font-icon-re"></i></a>
+
+
+                    </div>
+                </center>
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+<br>

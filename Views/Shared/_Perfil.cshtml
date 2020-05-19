@@ -1,0 +1,196 @@
+﻿@using Site.Controllers;
+<!DOCTYPE html>
+<html lang="pt-br">
+@RenderBody()
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Perfil - Ristore - Programa de Fidelidade</title>
+
+
+    <!--bibliotecas -->
+    <link href="~/Scripts/template/css/lib/ion-range-slider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/lib/ion-range-slider/ion.rangeSlider.skinHTML5.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/separate/elements/player.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/separate/vendor/fancybox.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/separate/pages/profile-2.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/lib/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container-fluid">
+            <a href="#" class="site-logo">
+                <img class="hidden-md-down" src="~/Scripts/imagens/logo/RST_Icon.png" alt="">
+                <img class="hidden-lg-down" src="~/Scripts/imagens/logo/RST_Icon.png" alt="">
+            </a>
+
+
+            <div class="site-header-content">
+                <div class="site-header-content-in">
+                    <div class="site-header-shown">
+                        <div class="dropdown dropdown-notification notif">
+                            <a href="#"
+                               class="header-alarm dropdown-toggle active"
+                               id="dd-notification"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="font-icon-alarm"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-notif" aria-labelledby="dd-notification">
+                                <div class="dropdown-menu-notif-header">
+                                    Notificações
+                                    <span class="label label-pill label-danger">1</span>
+                                </div>
+                                <div class="dropdown-menu-notif-list">
+                                    <div class="dropdown-menu-notif-item">
+                                        <div class="photo">
+                                            <img src="~/Scripts/imagens/avatar-sign.png" alt="">
+                                        </div>
+                                        <div class="dot"></div>
+                                        <a href="#">Ristore</a> bem vindo a plataforma do ristore fidelidade
+                                        <div class="color-blue-grey-lighter">7 horas atrás</div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="dropdown-menu-notif-more">
+                                    <a href="#">Todas as Notificações</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="dropdown dropdown-lang">
+                            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="flag-icon flag-icon-pt"></span>
+                            </button>
+
+                        </div>
+
+                        <div class="dropdown user-menu">
+
+                            <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="~/Scripts/imagens/Perfil/perfilpequeno.png" alt="">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+                                <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-question-sign"></span>Ajuda</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Login/Logout"><span class="font-icon glyphicon glyphicon-log-out"></span>Sair</a>
+                            </div>
+                        </div>
+
+                        <button type="button" class="burger-right">
+                            <i class="font-icon-menu-addl"></i>
+                        </button>
+                    </div><!--.site-header-shown-->
+
+                    <div class="mobile-menu-right-overlay"></div>
+                    <div class="site-header-collapsed">
+                        <div class="site-header-collapsed-in">
+
+
+
+
+
+
+
+
+                            
+                        </div><!--.site-header-collapsed-in-->
+                    </div><!--.site-header-collapsed-->
+                </div><!--site-header-content-in-->
+            </div><!--.site-header-content-->
+        </div><!--.container-fluid-->
+    </header><!--.site-header-->
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+
+
+
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2019 Copyright: Todos os direitos reservados
+            <a href="#"> Ristore</a> Versão Alfa: 0.1
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+
+    @if (Session["EstaLogado"] != null && Session["TokenUsuario"] != null)
+    {
+        <text>
+            BEM-VINDO, @Session["Email"].ToString().ToUpper()
+        </text>
+    }
+    else
+    {
+
+        Response.Redirect("~/Login/Index");
+
+    }
+    <!-- Footer -->
+
+    <script src="~/Scripts/scripts/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/scripts/lib/popper/popper.min.js"></script>
+    <script src="~/Scripts/scripts/lib/tether/tether.min.js"></script>
+    <script src="~/Scripts/scripts/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/scripts/plugins.js"></script>
+    <script src="~/Scripts/scripts/lib/salvattore/salvattore.min.js"></script>
+    <script src="~/Scripts/scripts/lib/ion-range-slider/ion.rangeSlider.js"></script>
+    <script src="~/Scripts/scripts/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                padding: 0,
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+
+            $("#range-slider-1").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-2").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-3").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+            $("#range-slider-4").ionRangeSlider({
+                min: 0,
+                max: 100,
+                from: 30,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+
+        });
+    </script>
+
+    <script src="~/Scripts/scripts/app.js"></script>
+</body>
+</html>
+

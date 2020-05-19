@@ -1,0 +1,198 @@
+﻿@model Models.UsuarioUpdate
+
+@{
+    ViewBag.Title = "Editar";
+    var items = ViewBag.usuariosE;
+    Layout = "~/Views/Shared/_Perfil.cshtml";
+}
+
+
+<div class="page-content">
+    <div class="profile-header-photo">
+        <div class="profile-header-photo-in">
+            <div class="tbl-cell">
+                <div class="info-block">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-9 col-xl-offset-3 col-lg-8 col-lg-offset-4 col-md-offset-0">
+                                <div class="tbl info-tbl">
+                                    <div class="tbl-row">
+                                        <div class="tbl-cell">
+                                            <p class="title">Dan Counsell</p>
+                                            <p>Company Founder</p>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">23К</p>
+                                                <p>Followers</p>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">938</p>
+                                                <p>Photos</p>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cell tbl-cell-stat">
+                                            <div class="inline-block">
+                                                <p class="title">18</p>
+                                                <p>Videos</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="change-cover">
+            <i class="font-icon font-icon-picture-double"></i>
+            Atualizar Foto de Capa
+            <input type="file" />
+        </button>
+    </div><!--.profile-header-photo-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <aside class="profile-side">
+                    <section class="box-typical profile-side-user">
+                        <button type="button" class="avatar-preview avatar-preview-128">
+                            <img src="~/Scripts/imagens/avatar-1-256.png" alt="" />
+                            <span class="update">
+                                <i class="font-icon font-icon-picture-double"></i>
+                                Update photo
+                            </span>
+                            <input type="file" />
+                        </button>
+                        <button type="button" class="btn btn-rounded">Editar Perfil</button>
+
+
+                        <div class="btn-group">
+                        </div>
+                    </section>
+
+                    <section class="box-typical profile-side-stat">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell">
+                                    <span class="number">9854</span>
+                                    Pontos
+                                </div>
+                                <div class="tbl-cell">
+                                    <span class="number">112</span>
+                                    Compras
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+                    <section class="box-typical">
+                        <center><h5 class="m-t-lg with-border">Editar Dados Pessoais</h5></center>
+                        @using (Html.BeginForm("SalvarEdicaoUsuarios", "Usuario", FormMethod.Post, new { onsubmit = "loadingPage()" }))
+                        {
+                        <div class="box-typical-inner">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <p class="line-with-icon">
+
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            </p>
+
+                            <p class="line-with-icon">
+                                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </p>
+                            <p class="line-with-icon">
+                                @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+                            </p>
+                            <p class="line-with-icon">
+                                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                            </p>
+
+                        </div>
+
+                            <div class="col-lg-5 clearfix">
+                                <div class="total-amount">
+
+                                    <div class="actions">
+
+                                        <input type="submit" value="Salvar" class="btn btn-rounded btn-inline" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!---
+                            <div>
+                                <button class="btn btn-inline btn-secondary btn-rounded">@Html.ActionLink("Cancelar", "Index", "Perfil")</button>
+                            </div>
+                            -->
+                    </section>
+
+
+                </aside><!--.profile-side-->
+            </div>
+
+            <div class="col-xl-9 col-lg-8">
+                <section class="tabs-section">
+                    <div class="tabs-section-nav tabs-section-nav-left">
+                        <ul class="nav" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#tabs-2-tab-1" role="tab" data-toggle="tab">
+                                    <span class="nav-link-in">Saldos</span>
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+
+
+                                <a class="nav-link inative">
+                                    <span class="nav-link-in">Movimentos</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div><!--.tabs-section-nav-->
+
+                    <div class="tab-content no-styled profile-tabs">
+                        <div role="tabpanel" class="tab-pane active" id="tabs-2-tab-1">
+
+
+                            @Html.Action(
+"BuscaMovimento",
+"Movimento",
+null)
+
+
+                        </div><!--.tab-pane-->
+
+
+
+                    </div><!--.tab-content-->
+                </section><!--.tabs-section-->
+            </div>
+
+
+
+
+
+
+        </div><!--.row-->
+    </div><!--.container-fluid-->
+</div><!--.page-content-->

@@ -1,0 +1,75 @@
+﻿@using Site.Controllers;
+<!DOCTYPE html>
+<html lang="pt-br">
+@RenderBody()
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ristore - Recuperar Senha </title>
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="apple-touch-icon" type="image/png">
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="icon" type="image/png">
+    <link href="~/Scripts/imagens/logo/RST_Icon.ico" rel="shortcut icon">
+    <!--
+    <link href="~Scripts/imagens/logo/RST_Icon.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <link href="img/favicon.ico" rel="shortcut icon">
+        -->
+    <link href="~/Scripts/template/css/separate/pages/login.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/lib/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Scripts/template/css/main.css" rel="stylesheet">
+</head>
+<body class="horizontal-navigation">
+
+    <!--rodape da pagina-->
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+
+
+
+
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2019 Copyright: Todos os direitos reservados
+            <a href="#"> Ristore</a> Versão Alfa: 0.1
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <!--biblioteca javascript -->
+    <script src="~/Scripts/scripts/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/scripts/lib/popper/popper.min.js"></script>
+    <script src="~/Scripts/scripts/lib/tether/tether.min.js"></script>
+    <script src="~/Scripts/scripts/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/scripts/plugins.js"></script>
+    <script type="text/javascript" src="~/Scripts/scripts/lib/match-height/jquery.matchHeight.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.page-center').matchHeight({
+                target: $('html')
+            });
+
+            $(window).resize(function () {
+                setTimeout(function () {
+                    $('.page-center').matchHeight({ remove: true });
+                    $('.page-center').matchHeight({
+                        target: $('html')
+                    });
+                }, 100);
+            });
+        });
+    </script>
+
+    <script src="~/Scripts/scripts/app.js"></script>
+</body>
+</html>
